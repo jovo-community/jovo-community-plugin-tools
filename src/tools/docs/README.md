@@ -31,7 +31,7 @@ const values: string[] = ['A', 'B', 'C', 'D', 'E'];
 const value = this.$jcTools.shuffleArray.getNextItem('letters', values);
 ```
 
-Each time `getNextItem()` is called, you will get a different item in the list.When all items have been accessed, the indexes are shuffled again and the current index starts back at the start.
+Each time `getNextItem()` is called, you will get a different item in the list. When all items have been accessed, the indexes are shuffled again and the current index starts back at the start.
 
 NOTE: The array passed to `getNextItem()` is not stored in `$user.data` only a shuffled list of indexes based on the length of the `array` parameter.
 
@@ -42,13 +42,15 @@ You can also use `getNextIndex()` passing a `key` parameter which will be used t
 handler.js:
 ```js
 const values = ['A', 'B', 'C', 'D', 'E'];
-const value = this.$jcTools.shuffleArray.getNextIndex('letters', values.length);
+const index = this.$jcTools.shuffleArray.getNextIndex('letters', values.length);
+const value = values[index];
 ```
 
 handler.ts:
 ```ts
 const values: string[] = ['A', 'B', 'C', 'D', 'E'];
-const value = this.$jcTools.shuffleArray.getNextIndex('letters', values.length);
+const index = this.$jcTools.shuffleArray.getNextIndex('letters', values.length);
+const value = values[index];
 ```
 
 Each time `getNextIndex()` is called, you will get a different index in the list. When all indexes have been accessed, they are shuffled again and the current index starts back at the start.
