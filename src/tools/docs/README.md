@@ -23,12 +23,22 @@ handler.js:
 ```js
 const values = ['A', 'B', 'C', 'D', 'E'];
 const value = this.$jcTools.shuffleArray.getNextItem('letters', values);
+
+// if stored entry for 'letters' is:
+//   "indexes": [3, 1, 2, 0, 4],
+//   "index": 3
+// then value is: 'A'
 ```
 
 handler.ts:
 ```ts
 const values: string[] = ['A', 'B', 'C', 'D', 'E'];
 const value = this.$jcTools.shuffleArray.getNextItem('letters', values);
+
+// if stored entry for 'letters' is:
+//   "indexes": [3, 1, 2, 0, 4],
+//   "index": 3
+// then value is: 'A'
 ```
 
 Each time `getNextItem()` is called, you will get a different item in the list. When all items have been accessed, the indexes are shuffled again and the current index starts back at the start.
@@ -44,6 +54,12 @@ handler.js:
 const values = ['A', 'B', 'C', 'D', 'E'];
 const index = this.$jcTools.shuffleArray.getNextIndex('letters', values.length);
 const value = values[index];
+
+// if stored entry for 'letters' is:
+//   "indexes": [3, 1, 2, 0, 4],
+//   "index": 3
+// then index is: 0
+// and value is: 'A'
 ```
 
 handler.ts:
@@ -51,6 +67,12 @@ handler.ts:
 const values: string[] = ['A', 'B', 'C', 'D', 'E'];
 const index = this.$jcTools.shuffleArray.getNextIndex('letters', values.length);
 const value = values[index];
+
+// if stored entry for 'letters' is:
+//   "indexes": [3, 1, 2, 0, 4],
+//   "index": 3
+// then index is: 0
+// and value is: 'A'
 ```
 
 Each time `getNextIndex()` is called, you will get a different index in the list. When all indexes have been accessed, they are shuffled again and the current index starts back at the start.

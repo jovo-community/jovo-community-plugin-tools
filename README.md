@@ -14,6 +14,11 @@ This plugin for the [Jovo Framework](https://github.com/jovotech/jovo-framework)
 - Platforms: any (alexa, googleAssistant, core, web, etc.)
 - Requires a [Database Integration](https://www.jovo.tech/docs/databases) for user data storage.
 
+## RIDR Lifecycle
+
+This plugin is registered as part of the `dialogue.start` [middleware](https://www.jovo.tech/docs/middlewares#ridr-middlewares) and is meant to be used in component handlers and hooks after that point. By this time the user's data is loaded from the configured database integration.
+
+
 ## Install
 
 Install the plugin into your Jovo project:
@@ -46,7 +51,7 @@ const app = new App({
 
 The included tools are:
 
-- [shuffleArray](./src/tools/docs/README.md)
+- [shuffleArray](./src/tools/docs/README.md) - allows you to shuffle any array and then access each item before reshuffling and starting over
 
 # License
 
