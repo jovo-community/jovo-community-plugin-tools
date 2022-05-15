@@ -1,0 +1,66 @@
+{
+  "name": "jovo-community-plugin-tools",
+  "version": "1.0.0",
+  "description": "Bundle of tools that integrate with Jovo Framework",
+  "main": "dist/src/index",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "jest --maxWorkers=1",
+    "eslint": "eslint src test --fix --ext .ts"
+  },
+  "homepage": "https://github.com/jovo-community/jovo-community-plugin-tools#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jovo-community/jovo-community-plugin-tools"
+  },
+  "bugs": {
+    "url": "https://github.com/jovo-community/jovo-community-plugin-tools/issues"
+  },
+  "keywords": [
+    "jovo",
+    "jovo framework",
+    "community",
+    "tools"
+  ],
+  "author": "Mark Tucker",
+  "license": "MIT",
+  "dependencies": {
+    "@jovotech/framework": "^4.0.0",
+    "husky": "^8.0.1",
+    "lodash.get": "^4.4.2",
+    "lodash.range": "^3.2.0",
+    "lodash.set": "^4.3.2",
+    "lodash.shuffle": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/lodash.get": "^4.4.7",
+    "@types/lodash.range": "^3.2.7",
+    "@types/lodash.set": "^4.3.7",
+    "@types/lodash.shuffle": "^4.2.7",
+    "@types/node": "^13.11.0",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "esbuild": "^0.14.2",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "jest": "^27.3.1",
+    "jest-extended": "^2.0.0",
+    "prettier": "^2.2.1",
+    "source-map-support": "^0.5.19",
+    "ts-jest": "^27.0.7",
+    "tsc-watch": "^4.2.9",
+    "typedoc": "^0.22.15",
+    "typescript": "^4.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint"
+    }
+  },
+  "files": [
+    "dist/src/**/*"
+  ]
+}
