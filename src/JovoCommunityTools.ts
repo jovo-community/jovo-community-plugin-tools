@@ -6,6 +6,6 @@ export class JovoCommunityTools {
   shuffleArray: ShuffleArray;
 
   constructor(readonly config: JovoCommunityToolsPluginConfig, jovo: Jovo) {
-    this.shuffleArray = new ShuffleArray(config, jovo);
+    this.shuffleArray = new ShuffleArray(config, jovo.$user.data);
   }
 }

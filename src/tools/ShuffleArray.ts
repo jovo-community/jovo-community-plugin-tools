@@ -12,8 +12,8 @@ export interface ShuffleArrayEntry {
 }
 
 export class ShuffleArray {
-  constructor(readonly config: JovoCommunityToolsPluginConfig, readonly jovo: Jovo) {}
-
+  constructor(readonly config: JovoCommunityToolsPluginConfig, readonly userData: unknown) {}
+  
   private init(key: string, length: number, reset: boolean) {
     const entry = this.getEntry(key);
 
@@ -33,14 +33,14 @@ export class ShuffleArray {
 
   getEntry(key: string): ShuffleArrayEntry {
     const path = `${STORE_PATH}.${key}`;
-    const entry: ShuffleArrayEntry = _get(this.jovo.$user.data, path);
+    const entry: ShuffleArrayEntry = _get(this.userData, path);
 
     return entry;
   }
 
   setEntry(key: string, entry: ShuffleArrayEntry | undefined): void {
     const path = `${STORE_PATH}.${key}`;
-    _set(this.jovo.$user.data, path, entry);
+    _set(this.userData as any, path, entry);
   }
 
   getNextIndex(key: string, length: number, reset = false): number {
