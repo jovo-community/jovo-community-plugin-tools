@@ -1,6 +1,6 @@
 {
   "name": "jovo-community-plugin-tools",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Bundle of tools that integrate with Jovo Framework",
   "main": "dist/index",
   "types": "dist/index.d.ts",
