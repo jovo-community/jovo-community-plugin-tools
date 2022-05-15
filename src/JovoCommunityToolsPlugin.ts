@@ -17,7 +17,7 @@ export class JovoCommunityToolsPlugin extends Plugin<JovoCommunityToolsPluginCon
       throw new InvalidParentError(this.constructor.name, HandleRequest);
     }
 
-    parent.middlewareCollection.use('after.request.start', (jovo) => {
+    parent.middlewareCollection.use('dialogue.start', (jovo) => {
       jovo.$jcTools = new JovoCommunityTools(this, jovo);
 
       const dbPlugins = Object.values(jovo.$handleRequest.plugins).filter(

@@ -22,13 +22,13 @@ export class ShuffleArray {
   }
 
   private init(key: string, length: number, reset: boolean) {
-    const existing: ShuffleArrayEntry = this.getEntry(key);
+    const entry = this.getEntry(key);
 
     if (
       reset ||
-      !existing ||
-      existing.indexes.length > length ||
-      existing.index >= existing.indexes.length
+      !entry ||
+      entry.indexes.length > length ||
+      entry.index >= entry.indexes.length
     ) {
       const newEntry: ShuffleArrayEntry = {
         indexes: _shuffle(_range(length)),
@@ -39,23 +39,15 @@ export class ShuffleArray {
     }
   }
 
-  private getIndex(key: string): number {
-    const entry: ShuffleArrayEntry = this.jovo.$user.data.jcTools.shuffleArray[key];
-    const current = entry.indexes[entry.index];
-    entry.index++;
-
-    return current;
-  }
-
   clear(key: string): void {
     this.setEntry(key, undefined);
   }
 
   getEntry(key: string): ShuffleArrayEntry {
     const path = `${STORE_PATH}.${key}`;
-    const existing: ShuffleArrayEntry = _get(this.jovo.$user.data, path);
+    const entry: ShuffleArrayEntry = _get(this.jovo.$user.data, path);
 
-    return existing;
+    return entry;
   }
 
   setEntry(key: string, entry: ShuffleArrayEntry | undefined): void {
@@ -65,7 +57,12 @@ export class ShuffleArray {
 
   getNextIndex(key: string, length: number, reset = false): number {
     this.init(key, length, reset);
-    return this.getIndex(key);
+    
+    const entry = this.getEntry(key);
+    const currentIndex = entry.indexes[entry.index];
+    entry.index++;
+
+    return currentIndex;    
   }
 
   getNextItem(key: string, array: unknown[], reset = false): unknown {
