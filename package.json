@@ -2,8 +2,8 @@
   "name": "jovo-community-plugin-tools",
   "version": "1.0.2",
   "description": "Bundle of tools that integrate with Jovo Framework",
-  "main": "dist/src/index",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/index",
+  "types": "dist/index.d.ts",
   "scripts": {
     "tsc": "tsc",
     "test": "jest --maxWorkers=1",
