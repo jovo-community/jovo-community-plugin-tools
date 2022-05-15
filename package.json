@@ -61,6 +61,6 @@
     }
   },
   "files": [
-    "dist/src/**/*"
+    "dist"
   ]
 }
