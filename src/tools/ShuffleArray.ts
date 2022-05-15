@@ -1,8 +1,5 @@
 import { Jovo } from '@jovotech/framework';
-import {
-  JovoCommunityToolsPlugin,
-  JovoCommunityToolsPluginConfig,
-} from '../JovoCommunityToolsPlugin';
+import { JovoCommunityToolsPluginConfig } from '../JovoCommunityToolsPlugin';
 import _get from 'lodash.get';
 import _set from 'lodash.set';
 import _shuffle from 'lodash.shuffle';
@@ -15,21 +12,12 @@ export interface ShuffleArrayEntry {
 }
 
 export class ShuffleArray {
-  constructor(readonly plugin: JovoCommunityToolsPlugin, readonly jovo: Jovo) {}
-
-  get config(): JovoCommunityToolsPluginConfig {
-    return this.plugin.config;
-  }
+  constructor(readonly config: JovoCommunityToolsPluginConfig, readonly jovo: Jovo) {}
 
   private init(key: string, length: number, reset: boolean) {
     const entry = this.getEntry(key);
 
-    if (
-      reset ||
-      !entry ||
-      entry.indexes.length > length ||
-      entry.index >= entry.indexes.length
-    ) {
+    if (reset || !entry || entry.indexes.length > length || entry.index >= entry.indexes.length) {
       const newEntry: ShuffleArrayEntry = {
         indexes: _shuffle(_range(length)),
         index: 0,
@@ -57,12 +45,12 @@ export class ShuffleArray {
 
   getNextIndex(key: string, length: number, reset = false): number {
     this.init(key, length, reset);
-    
+
     const entry = this.getEntry(key);
     const currentIndex = entry.indexes[entry.index];
     entry.index++;
 
-    return currentIndex;    
+    return currentIndex;
   }
 
   getNextItem(key: string, array: unknown[], reset = false): unknown {

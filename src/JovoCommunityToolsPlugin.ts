@@ -18,7 +18,7 @@ export class JovoCommunityToolsPlugin extends Plugin<JovoCommunityToolsPluginCon
     }
 
     parent.middlewareCollection.use('dialogue.start', (jovo) => {
-      jovo.$jcTools = new JovoCommunityTools(this, jovo);
+      jovo.$jcTools = new JovoCommunityTools(this.config, jovo);
 
       const dbPlugins = Object.values(jovo.$handleRequest.plugins).filter(
         (plugin) => plugin instanceof DbPlugin,
