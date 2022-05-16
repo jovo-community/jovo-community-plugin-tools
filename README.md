@@ -51,7 +51,9 @@ const app = new App({
 
 The included tools are:
 
-- [shuffleArray](./src/tools/docs/README.md) - allows you to shuffle any array and then access each item before reshuffling and starting over
+- [shuffleArray](./src/tools/docs/ShuffleArray.md) - shuffle any array and then access each item before reshuffling and starting over
+
+- [streakCounter](./src/tools/docs/StreakCounter.md) - count the number of continuous days something is accessed.
 
 # License
 
