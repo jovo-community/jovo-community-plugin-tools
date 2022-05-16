@@ -12,6 +12,7 @@ The following methods can be accessed in handlers with `this.$jcTools.shuffleArr
 getNextItem(key: string, array: unknown[], reset = false): unknown
 getNextIndex(key: string, length: number, reset = false): number
 clear(key: string): void
+
 getEntry(key: string): ShuffleArrayEntry
 setEntry(key: string, entry: ShuffleArrayEntry | undefined): void
 ```
@@ -89,7 +90,7 @@ The Shuffle Array automatically reshuffles and sets the index back to the start:
 
 
 ### Get and Set Entry
-Normally you will not need to access the entries stored for each key in `this.$user.data.jcTools.shuffleArray`. The better approach is to use `getEntry(key)` or `setEntry(key, entry)`.
+Normally you will not need to access the entries stored for each key in `this.$user.data.jcTools.shuffleArray`. If you do, the better approach is to use `getEntry(key)` or `setEntry(key, entry)`.
 
 
 ## User Data Store

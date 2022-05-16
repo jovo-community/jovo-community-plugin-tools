@@ -1,9 +1,9 @@
-import { Jovo } from '@jovotech/framework';
 import { JovoCommunityToolsPluginConfig } from '../JovoCommunityToolsPlugin';
 import _get from 'lodash.get';
 import _set from 'lodash.set';
 import _shuffle from 'lodash.shuffle';
 import _range from 'lodash.range';
+
 const STORE_PATH = 'jcTools.shuffleArray';
 
 export interface ShuffleArrayEntry {
@@ -13,7 +13,7 @@ export interface ShuffleArrayEntry {
 
 export class ShuffleArray {
   constructor(readonly config: JovoCommunityToolsPluginConfig, readonly userData: unknown) {}
-  
+
   private init(key: string, length: number, reset: boolean) {
     const entry = this.getEntry(key);
 
