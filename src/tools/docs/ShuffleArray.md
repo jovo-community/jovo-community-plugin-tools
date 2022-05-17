@@ -16,7 +16,7 @@ The following methods can be accessed in handlers with `this.$jcTools.shuffleArr
 ```ts
 getNextItem(key: string, array: unknown[], reset = false): unknown
 getNextIndex(key: string, length: number, reset = false): number
-clear(key: string): void
+reset(key: string): void
 
 getEntry(key: string): ShuffleArrayEntry
 setEntry(key: string, entry: ShuffleArrayEntry | undefined): void
@@ -88,7 +88,7 @@ Each time `getNextIndex()` is called, you will get a different index in the list
 The Shuffle Array automatically reshuffles and sets the index back to the start:
 - The first time that `getNextIndex()` or `getNextItem()` is called.
 - The next call to `getNextIndex()` or `getNextItem()` after the current list of `indexes` have all been accessed.
-- The next call to `getNextIndex()` or `getNextItem()` after `clear()` is called.
+- The next call to `getNextIndex()` or `getNextItem()` after `reset()` is called.
 - When `getNextIndex()` or `getNextItem()` is called with the `reset` parameter set to `true`.
 - When the `length` parameter passed to `getNextIndex()` is smaller than the current length of `indexes`.
 - When the length of the `array` parameter passed to `getNextItem()` is smaller than the current length of `indexes`.

@@ -27,7 +27,7 @@ export class ShuffleArray {
     }
   }
 
-  clear(key: string): void {
+  reset(key: string): void {
     this.setEntry(key, undefined);
   }
 
