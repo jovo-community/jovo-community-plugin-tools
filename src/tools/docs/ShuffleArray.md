@@ -3,6 +3,11 @@
 ## Overview
 Shuffle Array allows you to shuffle any array and then access each item before reshuffling and starting over.
 
+Uses:
+- facts
+- quotes
+- questions
+
 ## Usage
 
 ### Summary
@@ -98,7 +103,7 @@ The shuffled array of `indexes` as well as the `index` for the current item are 
 
 To configure a Database Integration, follow the instructions [here](https://www.jovo.tech/docs/databases).
 
-Here is an example of how values are stored in  `this.$user.data`:
+Here is an example of how values are stored in `this.$user.data`:
 
 ```json
 {

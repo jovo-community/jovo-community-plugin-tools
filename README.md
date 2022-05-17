@@ -55,6 +55,8 @@ The included tools are:
 
 - [streakCounter](./src/tools/docs/StreakCounter.md) - count the number of continuous days something is accessed.
 
+- [rechargeCounter](./src/tools/docs/RechargeCounter.md) - track a limited counter that takes x minutes to recharge.
+
 # License
 
 MIT
