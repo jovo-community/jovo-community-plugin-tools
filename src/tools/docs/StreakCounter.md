@@ -5,6 +5,11 @@ Streak Counter allows you to count the number of continuous days something happe
 
 You can add one Streak Counter in the LAUNCH handler and another for a certain action in a game.
 
+Uses:
+- game play streaks
+- correct answer streaks
+- positive feedback for daily use
+
 ## Usage
 
 ### Summary
@@ -70,7 +75,7 @@ The `count` of the streak as well as the `lastDay` the streak was checked (store
 
 To configure a Database Integration, follow the instructions [here](https://www.jovo.tech/docs/databases).
 
-Here is an example of how values are stored in  `this.$user.data`:
+Here is an example of how values are stored in `this.$user.data`:
 
 ```json
 {
